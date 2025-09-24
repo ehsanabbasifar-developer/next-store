@@ -1,0 +1,12 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "enabled": false,
+  "ignorePaths": ["node_modules", "dist", "build", "out", ".next", "coverage"],
+  "words": [],
+  "flagWords": [],
+  "ignoreWords": [],
+  "dictionaries": [],
+  "dictionaryDefinitions": []
+}
+    
