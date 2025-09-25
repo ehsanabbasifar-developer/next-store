@@ -45,7 +45,7 @@ export default async function ProductsPage({ searchParams }: Props) {
           </div>
         </div>
 
-        <div className="flex justify-center mt-4 mb-8">
+        <div className="flex justify-center mt- mb-8">
           <div className="flex items-center space-x-4">
             <Link
               href={`?page=${page - 1}`}

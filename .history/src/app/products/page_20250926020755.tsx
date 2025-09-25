@@ -1,13 +1,10 @@
-import Link from "next/link";
 import Footer from "../features/footer/Footer";
 import Navbar from "../features/header/NavBar";
 import { getProducts } from "./api/getProducts";
 import ProductLayout from "./components/ProductLayout";
-
 interface SearchParamsType {
   page: string | undefined;
 }
-
 interface Props {
   searchParams: SearchParamsType;
 }
@@ -20,7 +17,6 @@ export default async function ProductsPage({ searchParams }: Props) {
   const startIndex = (page - 1) * selectItem;
   const endIndex = startIndex + selectItem;
   const sliceProducts = allProducts.slice(startIndex, endIndex);
-
   return (
     <div className="flex flex-col min-h-screen font-sans antialiased">
       <header>
@@ -44,31 +40,18 @@ export default async function ProductsPage({ searchParams }: Props) {
             ))}
           </div>
         </div>
-
-        <div className="flex justify-center mt-4 mb-8">
-          <div className="flex items-center space-x-4">
-            <Link
-              href={`?page=${page - 1}`}
-              className={`px-4 py-2 text-sm font-medium text-white rounded-md shadow-sm transition-colors ${
-                page === 1
-                  ? "bg-gray-400 cursor-not-allowed"
-                  : "bg-blue-500 hover:bg-blue-600"
-              }`}
-            >
-              Previous
-            </Link>
-            <Link
-              href={`?page=${page + 1}`}
-              className={`px-4 py-2 text-sm font-medium text-white rounded-md shadow-sm transition-colors ${
-                endIndex >= allProducts.length
-                  ? "bg-gray-400 cursor-not-allowed"
-                  : "bg-blue-500 hover:bg-blue-600"
-              }`}
-            >
-              Next
-            </Link>
-          </div>
-        </div>
+        <div className="flex items-center space-x-4">
+  <button
+    className="px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
+  >
+    Previous
+  </button>
+  <button
+    className="px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
+  >
+    Next
+  </button>
+</div>
       </main>
 
       <Footer />

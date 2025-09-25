@@ -19,7 +19,7 @@ export default function Navbar() {
       {/* Desktop Menu */}
       <div className="hidden md:flex items-center space-x-6 text-lg">
         <Link
-          href="/products?page=1"
+          href="/products?page"
           className="text-gray-600 hover:text-gray-900 transition-colors"
         >
           Products
@@ -105,7 +105,7 @@ export default function Navbar() {
           <li>
             <Link
               onClick={toggleMenu}
-              href="/products?page=1"
+              href="/products?page"
               className="text-gray-600 hover:text-gray-900 transition-colors"
             >
               Products

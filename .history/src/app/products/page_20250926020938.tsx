@@ -45,7 +45,7 @@ export default async function ProductsPage({ searchParams }: Props) {
           </div>
         </div>
 
-        <div className="flex justify-center mt-4 mb-8">
+        <div className="flex justify-center mt-12 mb-8">
           <div className="flex items-center space-x-4">
             <Link
               href={`?page=${page - 1}`}
@@ -56,7 +56,7 @@ export default async function ProductsPage({ searchParams }: Props) {
               }`}
             >
               Previous
-            </Link>
+            </>
             <Link
               href={`?page=${page + 1}`}
               className={`px-4 py-2 text-sm font-medium text-white rounded-md shadow-sm transition-colors ${
@@ -66,7 +66,7 @@ export default async function ProductsPage({ searchParams }: Props) {
               }`}
             >
               Next
-            </Link>
+            </>
           </div>
         </div>
       </main>

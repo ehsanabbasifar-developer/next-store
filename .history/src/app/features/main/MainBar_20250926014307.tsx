@@ -20,7 +20,7 @@ export default function MainBar() {
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-16">
           {/* Category Card 1 */}
           <Link
-            href="/products?page=1"
+            href="/products?"
             className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-lg w-full md:w-1/3 transition-transform duration-300 hover:scale-105"
           >
             <img
@@ -39,7 +39,7 @@ export default function MainBar() {
 
           {/* Category Card 2 */}
           <Link
-            href="/products?page=1"
+            href="/products?"
             className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-lg w-full md:w-1/3 transition-transform duration-300 hover:scale-105"
           >
             <img
@@ -58,7 +58,7 @@ export default function MainBar() {
 
           {/* Category Card 3 */}
           <Link
-            href="/products?page=1"
+            href="/products?"
             className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-lg w-full md:w-1/3 transition-transform duration-300 hover:scale-105"
           >
             <img
@@ -79,7 +79,7 @@ export default function MainBar() {
         {/* Call to Action to view products */}
         <div className="text-center">
           <Link
-            href="/products?page=1"
+            href="/products?"
             className="inline-block bg-blue-500 text-white text-lg font-semibold px-8 py-4 rounded-full hover:bg-blue-600 transition-colors shadow-lg"
           >
             Explore All Products

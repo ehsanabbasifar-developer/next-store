@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Footer from "../features/footer/Footer";
 import Navbar from "../features/header/NavBar";
 import { getProducts } from "./api/getProducts";
@@ -45,9 +44,9 @@ export default async function ProductsPage({ searchParams }: Props) {
           </div>
         </div>
 
-        <div className="flex justify-center mt-4 mb-8">
+        <div className="flex justify-center mt-12 mb-8">
           <div className="flex items-center space-x-4">
-            <Link
+            <lINK
               href={`?page=${page - 1}`}
               className={`px-4 py-2 text-sm font-medium text-white rounded-md shadow-sm transition-colors ${
                 page === 1
@@ -56,8 +55,8 @@ export default async function ProductsPage({ searchParams }: Props) {
               }`}
             >
               Previous
-            </Link>
-            <Link
+            </a>
+            <lINK
               href={`?page=${page + 1}`}
               className={`px-4 py-2 text-sm font-medium text-white rounded-md shadow-sm transition-colors ${
                 endIndex >= allProducts.length
@@ -66,7 +65,7 @@ export default async function ProductsPage({ searchParams }: Props) {
               }`}
             >
               Next
-            </Link>
+            </a>
           </div>
         </div>
       </main>
