@@ -1,0 +1,1 @@
+export function getProduct (id : number) :Promise<Data
