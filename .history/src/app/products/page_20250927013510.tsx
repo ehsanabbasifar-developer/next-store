@@ -13,6 +13,7 @@ interface Props {
 }
 
 export default async function ProductsPage({ searchParams }: Props) {
+  // گرفتن شماره صفحه از URL
   const page = await searchParams.page;
   const pageNumber: number = Number(page) || 1;
   const selectItem: number = 6;

@@ -13,14 +13,17 @@ interface Props {
 }
 
 export default async function ProductsPage({ searchParams }: Props) {
+  // گرفتن شماره صفحه از URL
   const page = await searchParams.page;
   const pageNumber: number = Number(page) || 1;
   const selectItem: number = 6;
 
+  // گرفتن کل محصولات
   const allProducts = await getProducts();
   const totalProducts = allProducts.length;
   const totalPages = Math.ceil(totalProducts / selectItem);
 
+  // محاسبه شروع و پایان محصولات در این صفحه
   const startIndex = (pageNumber - 1) * selectItem;
   const endIndex = startIndex + selectItem;
   const sliceProducts = allProducts.slice(startIndex, endIndex);

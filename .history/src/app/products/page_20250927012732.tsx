@@ -13,20 +13,13 @@ interface Props {
 }
 
 export default async function ProductsPage({ searchParams }: Props) {
-  const page = await searchParams.page;
-  const pageNumber: number = Number(page) || 1;
+  const page = await searchParams;
+  const pageString: number = Number(page) || 1;
   const selectItem: number = 6;
-
   const allProducts = await getProducts();
-  const totalProducts = allProducts.length;
-  const totalPages = Math.ceil(totalProducts / selectItem);
-
-  const startIndex = (pageNumber - 1) * selectItem;
+  const startIndex = (pageString - 1) * selectItem;
   const endIndex = startIndex + selectItem;
   const sliceProducts = allProducts.slice(startIndex, endIndex);
-
-  const hasPrevPage = pageNumber > 1;
-  const hasNextPage = pageNumber < totalPages;
 
   return (
     <div className="flex flex-col min-h-screen font-sans antialiased">
@@ -54,23 +47,27 @@ export default async function ProductsPage({ searchParams }: Props) {
 
         <div className="flex justify-center mt-4 mb-8">
           <div className="flex items-center space-x-4">
-            {hasPrevPage && (
-              <Link
-                href={`?page=${pageNumber - 1}`}
-                className="px-4 py-2 text-sm font-medium text-white rounded-md shadow-sm transition-colors bg-blue-500 hover:bg-blue-600"
-              >
-                Previous
-              </Link>
-            )}
-
-            {hasNextPage && (
-              <Link
-                href={`?page=${pageNumber + 1}`}
-                className="px-4 py-2 text-sm font-medium text-white rounded-md shadow-sm transition-colors bg-blue-500 hover:bg-blue-600"
-              >
-                Next
-              </Link>
-            )}
+            <Link
+              href={`?page=${pageString - 1}`}
+              className={`px-4 py-2 text-sm font-medium text-white rounded-md shadow-sm transition-colors ${
+                pageString === 1
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-blue-500 hover:bg-blue-600"
+              }`}
+            >
+              Previous
+            </Link>
+            {allProducts.length -1 }
+            <Link
+              href={`?page=${pageString + 1}`}
+              className={`px-4 py-2 text-sm font-medium text-white rounded-md shadow-sm transition-colors ${
+                endIndex >= allProducts.length
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-blue-500 hover:bg-blue-600"
+              }`}
+            >
+              Next
+            </Link>
           </div>
         </div>
       </main>
