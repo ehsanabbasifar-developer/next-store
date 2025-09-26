@@ -1,6 +1,6 @@
 "use client";
 
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import ErrorMessage from "./ErrorMessage";
 
 interface InputsTypes {
@@ -11,8 +11,8 @@ interface InputsTypes {
 
 export default function Form() {
   const { register, handleSubmit, formState } = useForm<InputsTypes>();
-  function submitForm({ name, message, email }: InputsTypes): void {
-    console.log(name);
+  function submitForm({ name, email, message }: InputsTypes): void {
+    console.log();
   }
   return (
     <div className="bg-white shadow-xl rounded-2xl p-8 sm:p-12">
@@ -37,11 +37,9 @@ export default function Form() {
               name="name"
               id="name"
               autoComplete="name"
-              className="py-3 text-gray-700 px-4 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-lg bg-gray-50"
+              className="py-3 px-4 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-lg bg-gray-50"
             />
-            {formState.errors.name && (
-              <ErrorMessage message={formState?.errors?.name?.message} />
-            )}
+              {formState.errors.name && <ErrorMessage></ErrorMessage> }
           </div>
         </div>
 
@@ -66,11 +64,8 @@ export default function Form() {
               name="email"
               type="email"
               autoComplete="email"
-              className="py-3 text-gray-700 px-4 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-lg bg-gray-50"
+              className="py-3 px-4 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-lg bg-gray-50"
             />
-            {formState.errors.email && (
-              <ErrorMessage message={formState?.errors?.email?.message} />
-            )}
           </div>
         </div>
 
@@ -90,9 +85,6 @@ export default function Form() {
               rows={4}
               className="py-3 text-gray-700 px-4 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-lg bg-gray-50"
             ></textarea>
-            {formState.errors.message && (
-              <ErrorMessage message={formState?.errors?.message?.message} />
-            )}
           </div>
         </div>
 

@@ -1,18 +1,18 @@
 "use client";
 
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import ErrorMessage from "./ErrorMessage";
 
 interface InputsTypes {
-  name: string;
+  name: str;
   email: string;
   message: string;
 }
 
 export default function Form() {
   const { register, handleSubmit, formState } = useForm<InputsTypes>();
-  function submitForm({ name, message, email }: InputsTypes): void {
-    console.log(name);
+  function submitForm({ name, email, message }: InputsTypes): void {
+    console.log();
   }
   return (
     <div className="bg-white shadow-xl rounded-2xl p-8 sm:p-12">

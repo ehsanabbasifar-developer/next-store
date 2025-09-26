@@ -11,9 +11,10 @@ interface InputsTypes {
 
 export default function Form() {
   const { register, handleSubmit, formState } = useForm<InputsTypes>();
-  function submitForm({ name, message, email }: InputsTypes): void {
-    console.log(name);
-  }
+const submitForm : SubmitHandler<InputsTypes> = ({name , email , message})  => void {
+    console.log(name ,email , message);
+    
+}
   return (
     <div className="bg-white shadow-xl rounded-2xl p-8 sm:p-12">
       <form

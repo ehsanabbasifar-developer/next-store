@@ -1,23 +1,15 @@
 "use client";
 
-import { SubmitHandler, useForm } from "react-hook-form";
-import ErrorMessage from "./ErrorMessage";
-
-interface InputsTypes {
-  name: string;
-  email: string;
-  message: string;
-}
+import { useForm } from "react-hook-form";
 
 export default function Form() {
-  const { register, handleSubmit, formState } = useForm<InputsTypes>();
-  function submitForm({ name, message, email }: InputsTypes): void {
-    console.log(name);
+  const { register , handleSubmit } = useForm();
+  function submitForm (x) {
+   console.log(x)
   }
   return (
     <div className="bg-white shadow-xl rounded-2xl p-8 sm:p-12">
-      <form
-        onSubmit={handleSubmit(submitForm)}
+      <form onSubmit={handleSubmit(submitForm)}
         id="contact-form"
         method="POST"
         className="grid grid-cols-1 gap-y-6"
@@ -37,11 +29,8 @@ export default function Form() {
               name="name"
               id="name"
               autoComplete="name"
-              className="py-3 text-gray-700 px-4 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-lg bg-gray-50"
+              className="py-3 px-4 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-lg bg-gray-50"
             />
-            {formState.errors.name && (
-              <ErrorMessage message={formState?.errors?.name?.message} />
-            )}
           </div>
         </div>
 
@@ -66,11 +55,8 @@ export default function Form() {
               name="email"
               type="email"
               autoComplete="email"
-              className="py-3 text-gray-700 px-4 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-lg bg-gray-50"
+              className="py-3 px-4 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-lg bg-gray-50"
             />
-            {formState.errors.email && (
-              <ErrorMessage message={formState?.errors?.email?.message} />
-            )}
           </div>
         </div>
 
@@ -88,11 +74,8 @@ export default function Form() {
               id="message"
               name="message"
               rows={4}
-              className="py-3 text-gray-700 px-4 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-lg bg-gray-50"
+              className="py-3 text-gray px-4 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-lg bg-gray-50"
             ></textarea>
-            {formState.errors.message && (
-              <ErrorMessage message={formState?.errors?.message?.message} />
-            )}
           </div>
         </div>
 
