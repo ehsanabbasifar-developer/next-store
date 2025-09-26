@@ -47,7 +47,7 @@ export default async function Product({ params }: Props) {
       <header>
         <Navbar />
       </header>
-      <main className="flex-grow py-16 mt-14 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <main className="flex-grow py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-start">
             <div className="flex justify-center lg:justify-end">
