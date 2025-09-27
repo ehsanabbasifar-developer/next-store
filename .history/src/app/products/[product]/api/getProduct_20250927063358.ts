@@ -10,9 +10,7 @@ export async function getProduct(id: string): Promise<DataType | null> {
     if (axios.isAxiosError(err)) {
       console.log(err.message)
       return null
-    } else {
-      return null
     }
-
+    return null
   }
 }

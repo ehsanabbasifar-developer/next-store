@@ -11,8 +11,8 @@ export async function getProduct(id: string): Promise<DataType | null> {
       console.log(err.message)
       return null
     } else {
-      return null
+        return null
     }
-
+  
   }
 }

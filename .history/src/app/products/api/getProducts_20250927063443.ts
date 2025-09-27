@@ -14,12 +14,7 @@ export async function getProducts(): Promise<DataType[]> {
         const res = await axios.get<DataType[]>('https://fakestoreapi.com/products')
         return res.data
     } catch (err) {
-        if (axios.isAxiosError(err)) {
-            console.log(err.message, err.response?.status)
-            return []
-        } else {
-            return []
-        }
+        if (axios)
     }
 
 }

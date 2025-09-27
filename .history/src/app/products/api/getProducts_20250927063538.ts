@@ -11,7 +11,7 @@ export interface DataType {
 }
 export async function getProducts(): Promise<DataType[]> {
     try {
-        const res = await axios.get<DataType[]>('https://fakestoreapi.com/products')
+        const res = await axios.get<DataType[]>('https://fakestoreapi.com/productsk')
         return res.data
     } catch (err) {
         if (axios.isAxiosError(err)) {

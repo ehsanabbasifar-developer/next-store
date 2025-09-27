@@ -15,8 +15,7 @@ export async function getProducts(): Promise<DataType[]> {
         return res.data
     } catch (err) {
         if (axios.isAxiosError(err)) {
-            console.log(err.message, err.response?.status)
-            return []
+            console.log(err.message , err.response?.status)
         } else {
             return []
         }
