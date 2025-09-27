@@ -8,11 +8,7 @@ export function generateMetadata(): Metadata {
     title: "this is our store",
     description:
       "we have every thing in this store and you can find every thing that you want",
-    openGraph: {
-      title: "this is our store",
-      description:
-        "we have every thing in this store and you can find every thing that you want",
-    },
+    openGraph  
   };
 }
 

@@ -3,18 +3,7 @@ import Footer from "./features/footer/Footer";
 import Navbar from "./features/header/NavBar";
 import MainBar from "./features/main/MainBar";
 
-export function generateMetadata(): Metadata {
-  return {
-    title: "this is our store",
-    description:
-      "we have every thing in this store and you can find every thing that you want",
-    openGraph: {
-      title: "this is our store",
-      description:
-        "we have every thing in this store and you can find every thing that you want",
-    },
-  };
-}
+export function generateMetadata () :Metadata
 
 export default function Home() {
   return (

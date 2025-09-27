@@ -14,15 +14,8 @@ interface Props {
   searchParams: SearchParamsType;
 }
 
-export function generateMetadata(): Metadata {
-  return {
-    title: "all products in our store",
-    description: "here is all of our products you can buy each of you want",
-    openGraph: {
-      title: "all products in our store",
-      description: "here is all of our products you can buy each of you want",
-    },
-  };
+export function generateMetadata () :Metadata {
+  title : 
 }
 
 export default async function ProductsPage({ searchParams }: Props) {

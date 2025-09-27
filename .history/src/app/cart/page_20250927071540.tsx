@@ -2,11 +2,21 @@
 import React from "react";
 import Navbar from "../features/header/NavBar";
 import Footer from "../features/footer/Footer";
-import ProductDetails from "./components/ProductDetails";
+import ProductDetails from "./components/ProductDetails"
 import { useStore } from "../zustand/store";
 import SummaryCart from "./components/SummaryCart";
-import { Metadata } from "next";
-
+export function generateMetadata(): M {
+  return {
+    title: "this is our store",
+    description:
+      "we have every thing in this store and you can find every thing that you want",
+    openGraph: {
+      title: "this is our store",
+      description:
+        "we have every thing in this store and you can find every thing that you want",
+    },
+  };
+}
 export default function CartPage() {
   const products = useStore((state) => state.product);
   const subtotal = products.reduce(
@@ -37,9 +47,7 @@ export default function CartPage() {
                     Your cart is empty!
                   </div>
                 ) : (
-                  products.map((item) => (
-                    <ProductDetails key={item.id} item={item} />
-                  ))
+                  products.map((item) => <ProductDetails key={item.id} item={item}/>)
                 )}
               </div>
             </div>

@@ -1,4 +1,3 @@
-import { Metadata } from "next";
 import Footer from "../features/footer/Footer";
 import Navbar from "../features/header/NavBar";
 export function generateMetadata(): Metadata {

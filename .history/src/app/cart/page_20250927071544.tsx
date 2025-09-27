@@ -6,7 +6,18 @@ import ProductDetails from "./components/ProductDetails";
 import { useStore } from "../zustand/store";
 import SummaryCart from "./components/SummaryCart";
 import { Metadata } from "next";
-
+export function generateMetadata(): Metadata {
+  return {
+    title: "this is our store",
+    description:
+      "we have every thing in this store and you can find every thing that you want",
+    openGraph: {
+      title: "this is our store",
+      description:
+        "we have every thing in this store and you can find every thing that you want",
+    },
+  };
+}
 export default function CartPage() {
   const products = useStore((state) => state.product);
   const subtotal = products.reduce(

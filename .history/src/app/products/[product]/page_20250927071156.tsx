@@ -5,7 +5,6 @@ import Link from "next/link";
 import ButtonAddToCart from "./components/ButtonAddToCart";
 import { Metadata } from "next";
 import { title } from "process";
-import { deserialize } from "v8";
 
 interface ParamsType {
   product: string;
@@ -14,21 +13,14 @@ interface Props {
   params: Promise<ParamsType>;
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { product } = await params;
-  const data = await getProduct(product);
-  return {
-    title: data?.title,
-    description: data?.description,
-    openGraph: {
-      title: data?.title,
-      description: data?.description,
-    },
-  };
+export async function generateMetadata ({params} : Props) :Promise<Metadata> {
+    return {
+      
+    }
 }
 
 export default async function Product({ params }: Props) {
-  const { product } = await params;
+  const { product } =await params;
   const data = await getProduct(product);
 
   if (!data) {
@@ -95,7 +87,7 @@ export default async function Product({ params }: Props) {
                 </p>
               </div>
               <div className="mt-10">
-                <ButtonAddToCart data={data} />
+             <ButtonAddToCart data={data}/>
               </div>
             </div>
           </div>

@@ -2,9 +2,8 @@ import React from "react";
 import Footer from "../features/footer/Footer";
 import Navbar from "../features/header/NavBar";
 import Form from "./components/Form";
-import { Metadata } from "next";
 
-export function generateMetadata(): Metadata {
+export function generateMetadata(): Metada {
   return {
     title: "this is our store",
     description:

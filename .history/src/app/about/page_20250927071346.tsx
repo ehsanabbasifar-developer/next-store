@@ -1,18 +1,6 @@
-import { Metadata } from "next";
 import Footer from "../features/footer/Footer";
 import Navbar from "../features/header/NavBar";
-export function generateMetadata(): Metadata {
-  return {
-    title: "this is our store",
-    description:
-      "we have every thing in this store and you can find every thing that you want",
-    openGraph: {
-      title: "this is our store",
-      description:
-        "we have every thing in this store and you can find every thing that you want",
-    },
-  };
-}
+
 
 export default function AboutPage() {
   return (

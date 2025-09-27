@@ -1,7 +1,6 @@
-import { Metadata } from "next";
 import Footer from "../features/footer/Footer";
 import Navbar from "../features/header/NavBar";
-export function generateMetadata(): Metadata {
+export function generateMetadata(): Meta {
   return {
     title: "this is our store",
     description:
