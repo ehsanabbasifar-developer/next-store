@@ -1,0 +1,3 @@
+interface InitialStateType {
+    product : DataT
+}
