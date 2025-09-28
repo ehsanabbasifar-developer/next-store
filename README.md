@@ -77,7 +77,3 @@ Add state management using Redux or Context API
 License
 
 This project is licensed under the MIT License.
-
-اگر بخوای، می‌تونم یک نسخه کوتاه‌تر و جذاب برای GitHub هم بسازم که بازدیدکننده‌ها سریع بفهمند پروژه چی هست و چه مهارت‌هایی داری.
-
-میخوای برات بسازم؟
