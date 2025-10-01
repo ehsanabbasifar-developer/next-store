@@ -1,0 +1,28 @@
+import { UseMutateFunction, useMutation } from "@tanstack/react-query";
+import { login, ParamterType, ReturnType } from "../api/login";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
+
+interface LoginType {
+    mutateLogin: UseMutateFunction<ReturnType, Error, ParamterType, unknown>,
+    error: Error | null,
+    isPending: boolean
+}
+
+export function useLogin(): LoginType {
+    const router = useRouter()
+    const { mutate: mutateLogin, error, data, isPending } = useMutation<ReturnType, Error, ParamterType>({
+        mutationFn: ({ username, password }) => login({ username, password }),
+        mutationKey: ["login"],
+        onSuccess: (data) => {
+            toast.success("You have successfully logged in")
+            console.log(data.token)
+            router.push("/products")
+        },
+        onError : (err) => {
+            toast.error(err.message )
+        }
+    });
+
+    return { mutateLogin, error, isPending };
+}
